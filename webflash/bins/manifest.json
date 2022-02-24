@@ -20,6 +20,10 @@
                 {
                     "path": "ESP32_Server_900u.ino.bin",
                     "offset": 65536
+                },
+                {
+                    "path": "ESP32_Server_900u.spiffs.bin",
+                    "offset": 2686976
                 }
             ]
         }
