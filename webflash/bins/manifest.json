@@ -2,7 +2,7 @@
     "name": "ESP32_Server_900u",
     "builds": [
         {
-            "chipFamily": "ESP32S2",
+            "chipFamily": "ESP32-S2",
             "new_install_prompt_erase": true,
             "parts": [
                 {
