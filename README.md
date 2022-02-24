@@ -1,8 +1,12 @@
 # ESP32 Server 9.00u
 
+### Providing a webflash binary for a snapshot of code on the 24th of Feb 2022
+
+I did not modify this in any way, it is just a binary of the code when I forked it on the above date.
+
 <br>
 
-This is a project designed for the <a href=https://www.espressif.com/en/products/socs/esp32-s2>ESP32-S2</a>, *<a href=https://www.espressif.com/en/products/socs/esp32-s3>ESP32-S3</a> and <a href=https://www.espressif.com/en/products/socs/esp32>ESP32</a> boards to provide a wifi http server, dns server and *<b>USB storage emulation</b>.
+This is a project designed for the <a href=https://www.espressif.com/en/products/socs/esp32-s2>ESP32-S2</a>, _<a href=https://www.espressif.com/en/products/socs/esp32-s3>ESP32-S3</a> and <a href=https://www.espressif.com/en/products/socs/esp32>ESP32</a> boards to provide a wifi http server, dns server and _<b>USB storage emulation</b>.
 
 it is for the <a href=https://github.com/ChendoChap/pOOBs4>PS4 9.00 OOB Exploit</a>.
 
@@ -19,19 +23,16 @@ if you select a `No OTA` partition the firmware update via http will not be avai
 
 you can access the main page from the userguide or the consoles webbrowser using any hostname.<br>
 
-
-<br> 
+<br>
 
 ## ESP32 Boards
 
 if your board is a <a href=https://www.espressif.com/en/products/socs/esp32>ESP32</a> `the usb emulation will not be available` so you will need to wire a usb drive up to it like this project <a href=https://github.com/stooged/PS4-Server-900u>PS4-Server-900u</a> or you can manually plug and unplug a usb drive for exfathax.<br>
 this is a <a href=https://github.com/stooged/ESP32-Server-900u/blob/main/Images/esp32_diag.jpg>wiring diagram</a> for the ESP32 boards.
 
-
 ## ESP32-S2 Boards
 
 if your board is a <a href=https://www.espressif.com/en/products/socs/esp32-s2>ESP32-S2</a> you do not need a usb drive with this project as it emulates a usb mass storage device to the console and triggers a filesystem bug to leverage the exploit(exfathax).
-
 
 ## ESP32-S3 Boards
 
@@ -39,7 +40,6 @@ if your board is a <a href=https://www.espressif.com/en/products/socs/esp32-s3>E
 `these boards are in development stage and have minimal support.`
 
 <br>
-
 
 ## Libraries
 
@@ -52,14 +52,13 @@ the project is built using <b><a href=https://github.com/me-no-dev/ESPAsyncWebSe
 
 install or update the ESP32 core by adding this url to the <a href=https://docs.arduino.cc/learn/starting-guide/cores>Additional Boards Manager URLs</a> section in the arduino "<b>Preferences</b>".
 
-` https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json `
+`https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json`
 
 then goto the "<b>Boards Manager</b> and install or update the "<b>esp32</b>" core.
 
 <br>
 
 if you have problems with the board being identified/found in windows then you might need to install the <a href=https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers>USB to UART Bridge</a> drivers.
-
 
 <br>
 
@@ -108,7 +107,6 @@ then use a webbrowser and goto http://10.1.1.1/admin.html <b>10.1.1.1</b> is the
 on the side menu of the admin page select <b>File Uploader</b> and then click <b>Select Files</b> and locate the <b>data</b> folder inside the <b>ESP32_Server_900u</b> folder in this repo and select all the files inside the <b>data</b> folder and click <b>Upload Files</b>
 you can then goto <b>Config Editor</b> and change the password for the wifi ap.
 
-
 alternatively if you install this <a href=https://github.com/stooged/arduino-esp32fs-plugin>plugin</a> to the arduino ide you can upload the files to the board storage with the arduino ide by selecting <b>Tools > ESP32 Sketch Data Upload</b>
 
 <a href=https://github.com/stooged/arduino-esp32fs-plugin>Arduino ESP32-S2 filesystem uploader</a>
@@ -119,32 +117,27 @@ the files uploaded using this method are found in the <b>data</b> folder inside 
 
 <br>
 
-
-
 ## Internal pages
 
-* <b>admin.html</b> - the main landing page for administration.
+- <b>admin.html</b> - the main landing page for administration.
 
-* <b>index.html</b> - if no index.html is found the server will generate a simple index page and list the payloads automatically.
+- <b>index.html</b> - if no index.html is found the server will generate a simple index page and list the payloads automatically.
 
-* <b>info.html</b> - provides information about the esp board.
+- <b>info.html</b> - provides information about the esp board.
 
-* <b>upload.html</b> - used to upload files(<b>.bin</b>) to the esp board for the webserver.
+- <b>upload.html</b> - used to upload files(<b>.bin</b>) to the esp board for the webserver.
 
-* <b>update.html</b> - used to update the firmware on the esp board (<b>fwupdate.bin</b>).
+- <b>update.html</b> - used to update the firmware on the esp board (<b>fwupdate.bin</b>).
 
-* <b>fileman.html</b> - used to <b>view</b> / <b>download</b> / <b>delete</b> files on the internal storage of the esp board.
+- <b>fileman.html</b> - used to <b>view</b> / <b>download</b> / <b>delete</b> files on the internal storage of the esp board.
 
-* <b>config.html</b> - used to configure wifi ap and ip settings.
+- <b>config.html</b> - used to configure wifi ap and ip settings.
 
-* <b>format.html</b> - used to format the internal storage of the esp board.
+- <b>format.html</b> - used to format the internal storage of the esp board.
 
-* <b>reboot.html</b> - used to reboot the esp board
-
+- <b>reboot.html</b> - used to reboot the esp board
 
 <br><br>
-
-
 
 ## Cases
 
@@ -159,11 +152,9 @@ these cases can be printed in PLA without supports.
 <a href=https://github.com/stooged/ESP32-Server-900u/tree/main/3D_Printed_Cases/Wemos_S2_Mini>Wemos S2 Mini</a><br>
 <a href=https://github.com/stooged/ESP32-Server-900u/tree/main/3D_Printed_Cases/DevKitM_1>DevKitM-1</a><br>
 
-
 ### ESP32-S3 Boards
 
 <a href=https://github.com/stooged/ESP32-Server-900u/tree/main/3D_Printed_Cases/S3_DevKitC_1>S3_DevKitC_1</a><br>
-
 
 ### ESP32 Boards
 
